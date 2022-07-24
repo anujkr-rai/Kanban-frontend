@@ -15,7 +15,10 @@ const Signup = (props) => {
 
   let handleSubmit = async (e) => {
     e.preventDefault();
-    let allusers= await fetch("https://demokanbanback.herokuapp.com/getAllUsers");
+    let allusers= await fetch("https://demokanbanback.herokuapp.com/getAllUsers", {
+      method: "GET",
+      mode:"cors",
+    });
     console.log(allusers)
     let isUnique=true;
     for(let user in allusers){
