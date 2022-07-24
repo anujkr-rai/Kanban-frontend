@@ -116,7 +116,7 @@ const EditPopup = (props) => {
    const handleSubmit =async (e) => {
     e.preventDefault();
 try{
-  const res = await axios.put('http://localhost:8081/changeTask',{
+  const res = await axios.put('https://demokanbanback.herokuapp.com/changeTask',{
     ...toSend
   },
   {headers: {

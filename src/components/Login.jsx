@@ -11,7 +11,7 @@ const Login = (props) => {
   let handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      let res = await fetch("http://localhost:8081/authenticate", {
+      let res = await fetch("https://demokanbanback.herokuapp.com/authenticate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         mode:"cors",

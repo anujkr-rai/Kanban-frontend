@@ -72,7 +72,7 @@ const Tasks = (props) => {
 
   useEffect(()=>{
     (async () => {
-      let res  = await fetch(`http://localhost:8081/getUserTask/${localStorage.getItem("user_id")}`, {
+      let res  = await fetch(`https://demokanbanback.herokuapp.com/getUserTask/${localStorage.getItem("user_id")}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

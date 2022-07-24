@@ -15,7 +15,7 @@ const Signup = (props) => {
 
   let handleSubmit = async (e) => {
     e.preventDefault();
-    let allusers= await fetch("http://localhost:8081/getAllUsers");
+    let allusers= await fetch("https://demokanbanback.herokuapp.com/getAllUsers");
     console.log(allusers)
     let isUnique=true;
     for(let user in allusers){
@@ -26,7 +26,7 @@ const Signup = (props) => {
 
     if (isUnique) {
     try {
-      let res = await fetch("http://localhost:8081/register", {
+      let res = await fetch("https://demokanbanback.herokuapp.com/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         mode:"cors",

@@ -54,7 +54,7 @@ const Navbar = (props) => {
 
   useEffect(()=>{
     (async () => {
-      let res  = await fetch('http://localhost:8081/getAllUsers', {
+      let res  = await fetch('https://demokanbanback.herokuapp.com/getAllUsers', {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
