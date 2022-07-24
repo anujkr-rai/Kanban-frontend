@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Switch } from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import { useState } from "react";
 
 function App() {
+  let [currentUser, setCurrentUser]=useState(localStorage.getItem("user_id"))
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Switch>
+      <Route
+        exact
+        path="/"
+        render={(routeProps) => (currentUser ? <Home
+          routeProps={routeProps} />
+          : <Login
+            routeProps={routeProps} setCurrentUser={setCurrentUser}/>)}
+      ></Route>
+      <Route exact path="/login" render={(routeProps) => <Login  routeProps={routeProps} currentUser={currentUser}  setCurrentUser={setCurrentUser} />}></Route>
+      <Route exact path="/signup" render={(routeProps) => <Signup  routeProps={routeProps} />}></Route>
+    </Switch>
   );
 }
 
