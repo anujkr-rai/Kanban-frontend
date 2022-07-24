@@ -15,19 +15,19 @@ const Signup = (props) => {
 
   let handleSubmit = async (e) => {
     e.preventDefault();
-    let allusers= await fetch("https://demokanbanback.herokuapp.com/getAllUsers", {
-      method: "GET",
-      mode:"cors",
-    });
-    console.log(allusers)
-    let isUnique=true;
-    for(let user in allusers){
-      if(user.username==username){
-        isUnique=false;
-      }
-    }
+    // let allusers= await fetch("https://demokanbanback.herokuapp.com/getAllUsers", {
+    //   method: "GET",
+    //   mode:"cors",
+    // });
+    // console.log(allusers)
+    // let isUnique=true;
+    // for(let user in allusers){
+    //   if(user.username==username){
+    //     isUnique=false;
+    //   }
+    // }
 
-    if (isUnique) {
+    // if (isUnique) {
     try {
       let res = await fetch("https://demokanbanback.herokuapp.com/register", {
         method: "POST",
@@ -53,7 +53,8 @@ const Signup = (props) => {
       }
     } catch (err) {
       console.log(err);
-    }}
+    }
+  // }
   };
 
   return (
